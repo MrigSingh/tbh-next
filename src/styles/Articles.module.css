@@ -1,0 +1,126 @@
+.head {
+  font-size: 30px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.link {
+  font-size: 20px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.contentContainer {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.postDetails {
+  max-width: 900px;
+  margin: 100px auto;
+}
+
+.postTitle {
+  font-size: 36px;
+}
+
+.postInfo{
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.postDesc{
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.hero{
+  position: relative;
+}
+
+.heroContent{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  max-width: 500px;
+  color: #fff;
+}
+
+.heroContent h1{
+  font-size: 100px;
+}
+
+.category{
+  margin-bottom: 50px;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.leftRightContainer{
+  max-width: 1400px;
+  margin: auto;
+  /* padding-bottom: 500px; */
+}
+
+.paraLeftRight{
+  display: flex;
+}
+
+.inverse{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.paraLeftRight .imgContainer{
+  flex: 1;   
+}
+
+.contentContainer{
+  font-size: 18px;
+  padding: 0 50px;
+  flex: 1;
+}
+
+.contentContainer h2{
+  margin-bottom: 20px;
+}
+
+.quote{
+  margin: 100px 0;
+  /* float: right; */
+  max-width: 900px;
+  text-align: right;
+  font-size: 40px;
+  font-style: italic;
+}
+.quote p {
+  display: inline;
+}
+.author{
+  font-size: 26px;
+}
+
+.bulletSection{
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.bulletSection h3{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.bulletSection p{
+  font-size: 18px;
+}
+
+.bulletSection h4{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.bulletSection ul li{
+  list-style-position: inside;
+}
