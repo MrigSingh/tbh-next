@@ -11,8 +11,9 @@
 }
 
 .contentContainer {
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: auto;
+  /* border: 1px solid; */
 }
 
 .postDetails {
@@ -48,26 +49,29 @@
 }
 
 .heroContent h1{
-  font-size: 100px;
+  font-size: 6.5vw;
+  width: 80%;
 }
 
 .category{
   margin-bottom: 50px;
-  font-size: 40px;
+  font-size: 3vw;
   text-transform: uppercase;
+  /* font-weight: 700; */
+  margin-left: 10px;
 }
 
 .leftRightContainer{
   max-width: 1400px;
   margin: auto;
-  /* padding-bottom: 500px; */
 }
 
 .paraLeftRight{
+  margin-bottom: 50px;
   display: flex;
 }
 
-.inverse{
+.rightCon{
   display: flex;
   flex-direction: row-reverse;
 }
@@ -88,11 +92,14 @@
 
 .quote{
   margin: 100px 0;
-  /* float: right; */
   max-width: 900px;
   text-align: right;
   font-size: 40px;
   font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 .quote p {
   display: inline;
@@ -117,10 +124,63 @@
 }
 
 .bulletSection h4{
+  font-size: 20px;
   margin-top: 50px;
   margin-bottom: 10px;
 }
 
 .bulletSection ul li{
   list-style-position: inside;
+}
+
+@media screen and (max-width: 1700px) {
+  .leftRightContainer{
+    max-width: 1300px;
+  }
+}
+@media screen and (max-width: 1420px) {
+  .leftRightContainer{
+    max-width: 1150px;
+  }
+  .heroContent{
+    width: 300px;
+  }
+  .heroContent h1{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .leftRightContainer{
+    max-width: 900px;
+  }
+  .postDetails {
+    max-width: 700px;
+  }
+  .rightCon .contentContainer{
+    padding-left: 0;
+  }
+  .leftCon .contentContainer{
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .heroContent{
+    width: 220px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .leftRightContainer, .bulletSection{
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .leftRightContainer, .bulletSection, .postDetails{
+    max-width: 90%;
+  }
+  .paraLeftRight{
+    flex-direction: column;
+  }
+  .contentContainer{
+    margin: 30px 0;
+  }
 }

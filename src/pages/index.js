@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchArticles = async () => {
       try{
-        const articles = await axios.get(SERVER_URL)
+        const articles = await axios.get(SERVER_URL+"/articles")
         setArticles(articles.data)
       }catch(err){
         console.log(err)
