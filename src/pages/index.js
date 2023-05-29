@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import placeholder from '../../public/assets/article.png'
 import Link from 'next/link'
-import { SERVER_URL } from '@/utils/const'
+// import { SERVER_URL } from '@/utils/const'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchArticles = async () => {
       try{
-        const articles = await axios.get(SERVER_URL+"/articles")
+        const articles = await axios.get("http://13.53.142.82:5500/articles")
         setArticles(articles.data)
       }catch(err){
         console.log(err)

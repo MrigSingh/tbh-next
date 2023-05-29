@@ -117,3 +117,13 @@ a {
   text-align: center;
   font-size: 24px;
 }
+
+.footer-container{
+  background: #000;
+  min-height: 240px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+}

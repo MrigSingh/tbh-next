@@ -14,7 +14,7 @@ export default function Article() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const articles = await axios.get("http://16.16.210.171:5500/article/112")
+        const articles = await axios.get("http://13.53.142.82:5500/article/112")
         setArticle(articles.data)
       }
       catch (err) {
@@ -57,11 +57,13 @@ export default function Article() {
             </div>
           ))}
           <div className={styles.quote}>
-            <p>'Aliqua labore cupidatat culpa sint cillum enim tempor. Anim esse aute mollit labore aliqua occaecat et laborum ex commodo et duis.'<span className={styles.author}>Workshop Participant</span></p>
+            <Markup content={article.quote} />
+            {/* <p>'Aliqua labore cupidatat culpa sint cillum enim tempor. Anim esse aute mollit labore aliqua occaecat et laborum ex commodo et duis.'<span className={styles.author}>Workshop Participant</span></p> */}
           </div>
         </section>
         <section className={styles.bulletSection}>
-          <h3>Subheader</h3>
+          <Markup content={article.subheader} />
+          {/* <h3>Subheader</h3>
           <p>Aute nostrud anim exercitation ea velit aliquip. Et fugiat reprehenderit reprehenderit aute dolore reprehenderit dolor. Fugiat amet ut enim duis duis sunt deserunt ea ea consectetur eu adipisicing.Et anim adipisicing quis deserunt velit proident duis amet ipsum reprehenderit. Velit qui commodo fugiat eu labore. Nostrud veniam mollit et fugiat incididunt minim sint reprehenderit.</p>
           <p>Reprehenderit ex est sit sunt id officia quis. Non voluptate non minim dolor exercitation fugiat labore adipisicing cillum non velit. In magna excepteur et ex minim qui. Aliquip aute nisi adipisicing laboris. Nulla aliquip non enim qui. Eiusmod in ad adipisicing minim deserunt nulla. Cupidatat in veniam nisi aliqua labore quis.Sunt magna qui eiusmod fugiat nisi aliquip eiusmod consectetur magna aliqua laborum eu voluptate. Esse laborum cillum occaecat exercitation Lorem non. Ipsum Lorem ex aute exercitation. Fugiat ad velit commodo labore ut nulla nostrud. Ex incididunt cillum nostrud dolore dolore est aute tempor est non et sit. Ipsum labore aute proident cupidatat in aliqua minim cupidatat id consectetur minim aliquip sit nulla.</p>
           <h4>List Subheader</h4>
@@ -69,7 +71,7 @@ export default function Article() {
             <li>Bullet One</li>
             <li>Bullet Two</li>
             <li>Bullet Three</li>
-          </ul>
+          </ul> */}
         </section>
       </>
     )
