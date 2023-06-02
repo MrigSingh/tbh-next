@@ -1,19 +1,29 @@
-.head {
-  font-size: 30px;
-  text-align: center;
-  margin: 50px 0;
+.hero {
+  position: relative;
 }
 
-.link {
-  font-size: 20px;
-  text-decoration: underline;
-  text-align: center;
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  max-width: 900px;
+  color: #fff;
+  color: rgb(158, 0, 0);
 }
 
-.contentContainer {
-  /* max-width: 1440px; */
-  margin: auto;
-  /* border: 1px solid; */
+.heroContent h1 {
+  font-size: 4.5vw;
+  width: 80%;
+}
+
+.heroContent p {
+  font-size: 32px;
+  width: 80%;
+}
+
+.heroContent p span{
+  color: #000;
 }
 
 .postDetails {
@@ -25,69 +35,19 @@
   font-size: 36px;
 }
 
-.postInfo{
+.postInfo {
   margin-top: 10px;
   font-size: 18px;
 }
 
-.postDesc{
+.postDesc {
   padding-top: 20px;
   font-size: 20px;
-}
-
-.hero{
-  position: relative;
-} 
-
-.heroContent{
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translate(-10%, -50%);
-  max-width: 500px;
-  color: #fff;
-}
-
-.heroContent h1{
-  font-size: 6.5vw;
-  width: 80%;
-}
-
-.category{
-  margin-bottom: 50px;
-  font-size: 3vw;
-  text-transform: uppercase;
-  /* font-weight: 700; */
-  margin-left: 10px;
 }
 
 .leftRightContainer{
   max-width: 1400px;
   margin: auto;
-}
-
-.paraLeftRight{
-  margin-bottom: 50px;
-  display: flex;
-}
-
-.rightCon{
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.paraLeftRight .imgContainer{
-  flex: 1;   
-}
-
-.contentContainer{
-  font-size: 18px;
-  padding: 0 50px;
-  flex: 1;
-}
-
-.contentContainer h2{
-  margin-bottom: 20px;
 }
 
 .quote{
@@ -107,30 +67,28 @@
 .author{
   font-size: 26px;
 }
-
-.bulletSection{
-  max-width: 900px;
-  margin: auto;
-  margin-bottom: 100px;
+.slideContainer{
+  padding: 100px 0;
+}
+.slide{
+  padding: 0 20px;
 }
 
-.bulletSection h3{
-  font-size: 30px;
-  margin-bottom: 20px;
+.navs{
+  margin-bottom: 200px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.bulletSection p{
-  font-size: 18px;
+.navs div{
+  padding: 0 30px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.bulletSection h4{
-  font-size: 20px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-
-.bulletSection ul li{
-  list-style-position: inside;
+.arrow::before{
+  content: none;
 }
 
 @media screen and (max-width: 1700px) {
@@ -161,6 +119,9 @@
   }
   .leftCon .contentContainer{
     padding-right: 0;
+  }
+  .quote{
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 1010px) {

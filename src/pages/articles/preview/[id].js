@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Markup } from 'interweave';
 import styles from '@/styles/Articles.module.css'
-import { FALLBACK_BG, SERVER_IP, SERVER_PORT, SERVER_URL, fakeArticles } from '@/utils/const';
+import { SERVER_IP, SERVER_PORT } from '@/utils/const';
 import Image from 'next/legacy/image';
-import articleImg from "../../../public/assets/article-img.png";
+// import articleImg from "../../../public/assets/article-img.png";
 
 export default function Article() {
   const [article, setArticle] = useState(null);
