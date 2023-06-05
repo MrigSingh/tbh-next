@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Markup } from 'interweave';
 import styles from '@/styles/Articles.module.css'
-import { SERVER_IP, SERVER_PORT } from '@/utils/const';
+import { SERVER_IP, SERVER_PORT, VIDEO_FORMATS } from '@/utils/const';
 import Image from 'next/legacy/image';
 // import articleImg from "../../../public/assets/article-img.png";
 
@@ -14,14 +14,14 @@ export default function Article() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const articles = await axios.get(`http://${SERVER_IP}:${SERVER_PORT}/article/${router.query.id}`)
+        const articles = await axios.get(`http://${SERVER_IP}:${SERVER_PORT}/preview/article/${router.query.id}`)
         setArticle(articles.data)
       }
       catch (err) {
         console.log(err)
       }
     }
-    if(router.query.id){
+    if (router.query.id) {
       fetchArticles()
     }
   }, [router])
@@ -31,12 +31,19 @@ export default function Article() {
     return (
       <>
         <section className={styles.hero}>
-          <Image src={article.image.replace("localhost", `http://${SERVER_IP}`)} width={800} height={484} layout='responsive' alt="hero-image" priority />
+          {VIDEO_FORMATS.includes(article.image.split(".")[article.image.split(".").length - 1]) ?
+            <video autoPlay muted loop id="myVideo" width="100%">
+              <source src={article.image.replace("localhost", `http://${SERVER_IP}`)} type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+            :
+            <Image src={article.image.replace("localhost", `http://${SERVER_IP}`)} width={800} height={484} layout='responsive' alt="hero-image" priority />
+          }
           <div className={styles.heroContent}>
             <p className={styles.category}>News</p>
             <h1>{article.head_title}</h1>
             {returnArticleDetails()}
-          </div> 
+          </div>
         </section>
         <div className={styles.postDetails}>
           <h1 className={styles.postTitle}>{article.title}</h1>

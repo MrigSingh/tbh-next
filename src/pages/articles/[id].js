@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Markup } from 'interweave';
 import styles from '@/styles/Articles.module.css'
-import { FALLBACK_BG, SERVER_IP, SERVER_PORT, SERVER_URL, fakeArticles } from '@/utils/const';
+import { FALLBACK_BG, SERVER_IP, SERVER_PORT, SERVER_URL, VIDEO_FORMATS, fakeArticles } from '@/utils/const';
 import Image from 'next/legacy/image';
 import articleImg from "../../../public/assets/article-img.png";
 
@@ -21,22 +21,30 @@ export default function Article() {
         console.log(err)
       }
     }
-    if(router.query.id){
+    if (router.query.id) {
       fetchArticles()
     }
   }, [router])
 
   const returnArticleDetails = () => <p className={styles.postInfo}>By <span>The Big House</span> | Posted in: NEWSLETTER | 1st June 2023</p>
+  console.log(article)
   if (article) {
     return (
       <>
         <section className={styles.hero}>
-          <Image src={article.image.replace("localhost", `http://${SERVER_IP}`)} width={800} height={484} layout='responsive' alt="hero-image" priority />
+          {VIDEO_FORMATS.includes(article.image.split(".")[article.image.split(".").length - 1]) ?
+            <video autoPlay muted loop id="myVideo" width="100%">
+              <source src={article.image.replace("localhost", `http://${SERVER_IP}`)} type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+            :
+            <Image src={article.image.replace("localhost", `http://${SERVER_IP}`)} width={800} height={484} layout='responsive' alt="hero-image" priority />
+          }
           <div className={styles.heroContent}>
             <p className={styles.category}>News</p>
             <h1>{article.head_title}</h1>
             {returnArticleDetails()}
-          </div> 
+          </div>
         </section>
         <div className={styles.postDetails}>
           <h1 className={styles.postTitle}>{article.title}</h1>

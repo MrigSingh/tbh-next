@@ -48,7 +48,7 @@ export default function Article() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const articles = await axios.get(`http://${SERVER_IP}:${SERVER_PORT}/theatre/${router.query.id}`)
+        const articles = await axios.get(`http://${SERVER_IP}:${SERVER_PORT}/preview/theatre/${router.query.id}`)
         setData(articles.data.find(item => item.id == router.query.id))
       }
       catch (err) {
@@ -66,7 +66,7 @@ export default function Article() {
         <section className={styles.hero}>
           <Image src={data.media_1.replace("localhost", `http://${SERVER_IP}`)} width={800} height={484} layout='responsive' alt="hero-image" priority />
           <div className={styles.heroContent}>
-            <p>{data.head_date.split("|")[0]} | <span>{data.head_date.split("|")[1]}</span></p>
+            {data.head_date && <p>{data.head_date.split("|")[0]} | <span>{data.head_date.split("|")[1]}</span></p>}
             <h1>{data.head_title}</h1>
           </div>
         </section>

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['thumbs.dreamstime.com', "13.53.142.82"],
+    domains: ['thumbs.dreamstime.com', "13.53.142.82", "picsum.photos"],
   },
 }
 
